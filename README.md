@@ -10,3 +10,8 @@ Current goals:
 1. Make more levels
 2. Make a start screen and generally make the GUI more user-friendly
 3. Make a scoring system and a high-score list
+
+To play: 
+```
+python index.py
+```
