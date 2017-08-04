@@ -1,4 +1,4 @@
-# FeynmanDiagramGame
+# Feynman Diagram Game
 
 A 2D game written in pygame where the player "solves" Feynman diagrams.
 
