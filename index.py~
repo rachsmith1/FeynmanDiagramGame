@@ -14,9 +14,20 @@ gameDisplay = pygame.display.set_mode((displayWidth,displayHeight))
 
 clock = pygame.time.Clock()
 
+buttonDict      = OrderedDict()
+vertexDict      = OrderedDict()
+allObjectsDict  = OrderedDict()
+
 grid = Grid(Color("black", 255), 450, 100, 40, 10, 3, gameDisplay)
+allObjectsDict["grid"] = {"name":"grid", "species":None, "subspecies":None, "vertexNum":None, "object":grid}
+
 checkButton = Button(Color("green", 255), Color("red", 255), Color("black", 255), "Check!", 900, 100, 90, 80, gameDisplay)
+buttonDict["checkButton"] = {"name":"checkButton","object":checkButton}
+allObjectsDict["checkButton"] = {"name":"checkButton", "species":None, "subspecies":None, "vertexNum":None, "object":checkButton}
+
 clearButton = Button(Color("yellow", 255), Color("red", 255), Color("black", 255), "Clear!", 900, 200, 90, 80, gameDisplay)
+buttonDict["clearButton"] = {"name":"clearButton","object":clearButton}
+allObjectsDict["clearButton"] = {"name":"clearButton", "species":None, "subspecies":None, "vertexNum":None, "object":clearButton}
 
 levelList = [
                "levels.level1",
@@ -24,16 +35,6 @@ levelList = [
             ]
 
 for levelFileName in levelList:
-
-   buttonDict      = OrderedDict()
-   vertexDict      = OrderedDict()
-   allObjectsDict  = OrderedDict()
-
-   allObjectsDict["grid"] = {"name":"grid", "species":None, "subspecies":None, "vertexNum":None, "object":grid}
-   buttonDict["checkButton"] = {"name":"checkButton","object":checkButton}
-   allObjectsDict["checkButton"] = {"name":"checkButton", "species":None, "subspecies":None, "vertexNum":None, "object":checkButton}
-   buttonDict["clearButton"] = {"name":"clearButton","object":clearButton}
-   allObjectsDict["clearButton"] = {"name":"clearButton", "species":None, "subspecies":None, "vertexNum":None, "object":clearButton}
    
    levelFile = importlib.import_module(levelFileName)
 
